@@ -1,3 +1,7 @@
+INSTALL ANSIBLE 
+--
+``` https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#control-node-requirements ```
+
 ![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/3b068ffd-48c2-4109-8aa7-cf0c14b81ed7)
 
 - Chef
@@ -79,3 +83,21 @@ WHEN CAN WE USE PYTHON OVER ANSIBLE
 --
 - WHEN YOUR TASK IS TO TALK TO APIs
 - like if you want to create a github issues or a jira ticket using their API, then go with PYTHON.
+
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/2397c0af-fe17-4c08-aea3-152c7e20f8f5)
+
+PROVISIONING
+--
+- ANSIBLE CAN BE USED FOR PROVISIONING
+- TERRAFOROM IS ALSO USED FOR PROVISIONING. WHICH ONE SHOULD I NEED TO USE.
+- ANSIBLE OR TERRAFORM.
+- ANSIBLE CORE SKILL - CONFIGURATION MANAGEMENT
+- TERRAFORM CORE SKILL - INFRA STRUCTURE AS A CODE.
+
+
+PYTHON IS MUST TO RUN ANSIBLE
+--
+- ON CONTROL NODE -- PYTHON MUST BE INSTALLED
+- ON MANAGE NODES -- PYTHON MUST BE INSTALLED.
+- ANSIBLE TAKES THE YAML FILE --> IT CONVERTS YAML FILE INTO PYTHON --> AND IT EXECUTES THE PYTHON MODULES ON THE MANAGE NODES.
+- IT CONNECTS TO THE MANAGE NODES --> USING SSH PROTOCAL (if it is LINUX), IF IT IS WINDOWS THEN IT WILL USE **WINRM PROTOCAL**
