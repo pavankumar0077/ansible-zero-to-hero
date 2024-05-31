@@ -50,6 +50,32 @@ WHAT EXACTLY ANSIBLE IS ?
 - IT IS ALSO USED AS DEPLOYMENT ( CI CD ) - For example if they want to deploy an application in kubernetes clusters or multiple vm's they can also use ANSIBLE FOR THAT.
 - IT IS ALSO FOR NETWORK AUTOMATION - For example - Companies like CISCO, F5 they have they load balancer, they have security related tools, API Gateways -- THEY HAVE NETWORK APPLIANCES CAN BE PHYSICAL or VIRTUAL, WE CAN ALSO TALK TO LOAD BALANACERS OR NETWORK APPLIANCES OF CISOC, F5 AND ETC COMPANIES -- WE CAN AUTOMATE THEY NETWORK APPLIANCES, VERY SIMPLE AUTOMATION OF A VLAN.
 
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/7d43a706-9444-46c4-9064-8f066077203b)
 
 ANSIBLE VS SHELL SCRIPTING VS PYTHON
 --
+- Shell scripting -- To install java, Automate using script script
+- Python -- We can automate java installation in a virtual machine using python.
+- Ansible -- By using ansible we can do the same task - automate.
+
+### To do this task which one we have to choose
+-- **TASK**: INSTALL JAVA ON TARGETE SERVER, 5 VM'S 
+-- WE ARE WRITE A **SHELL SCRIPT** AND RUN IN 5 VM'S -- IT WORKS FINE,BUT IF THE VM is windows then the automation will mot work. May be different VM's WILL HAVE DIFFERENT PACKAGE MANAGER., --- SHELL SCRIPT IS NOT SITABLE FOR THIS TASK.
+
+-- PYTHON IS SUITABLE FOR THIS TASK, IT WORKS FINE ON ANY DEVICE LIKE WINDOWS & UBUNTU AND ETC. -- IT WORKS FINE.
+-- 1. We need to know python
+-- 2. Updating the python scripts ( May after any year script -- syntax or functions may change )
+-- 3. We cam use paramiko or fabric to install in multiple vm's -- but we need to learn it. it takes time.
+
+-- ANSBILE
+- 1. WE DON'T NEED TO LOGIN INTO EACH AND EVERY MACHINE.
+  2. INSTALL ANISBLE IN THE CONTROL-NODE AND TELL THE MANAGE NODES -- WHICH ARE IN INVENTORY FILE 
+  3. IT WILL DO PARALLEL OR SEQUENTIALLY AND COMPLETE THE TASK.
+  4. JUST NEED TO LEARN YAML THAT'S IT.
+
+### NOTE : WE NEED TO USE ANSIBLE OVER SHELL AND PYTHON.
+
+WHEN CAN WE USE PYTHON OVER ANSIBLE
+--
+- WHEN YOUR TASK IS TO TALK TO APIs
+- like if you want to create a github issues or a jira ticket using their API, then go with PYTHON.
