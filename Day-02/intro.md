@@ -1,0 +1,12 @@
+## PASSWORD LESS AUTHENTICATION
+
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/9c58e42d-dc6b-475a-922e-725ded7d529f)
+
+- It is not possible to login without using AUTHENTICATION.
+- THEIR ARE 2 WAYS TO AUTHENTICATE
+- 1. PASSWORD
+- 2. SSH KEYS (PUBLIC KEY, PRIVATE KEY) - PUBLIC KEY IS SET UP IN TARGET VM, -- AND USING PRIVATE KEY WE CAN TALK TO THEM.
+
+NOTE : WHEN WE TRY TO CONNECT TO THE VM, It will ask for SSH KEY PEM FILE OR PASSWORD.
+--
+
