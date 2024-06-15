@@ -2,15 +2,15 @@
 
 
 
-step 1 : chmod 400 ansible-control.pem
-step 2 : eval "$(ssh-agent -s)" ssh-add ansible-control.pem
+step 1 : ``` chmod 400 ansible-control.pem ```
+step 2 : ``` eval "$(ssh-agent -s)" ssh-add ansible-control.pem ```
 ```
 ubuntu@ip-172-31-7-237:~$ eval "$(ssh-agent -s)"
 ssh-add ansible-control.pem
 Agent pid 5688
 Identity added: ansible-control.pem (ansible-control.pem)
 ```
-step 3 : ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245
+step 3 : ``` ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245 ```
 ```
 ubuntu@ip-172-31-7-237:~$ ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245
 The authenticity of host '3.108.193.245 (3.108.193.245)' can't be established.
@@ -25,7 +25,7 @@ and check to make sure that only the key(s) you wanted were added.
 
 ubuntu@ip-172-31-7-237:~$
 ```
-step 4 : ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245'
+step 4 : ``` ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245' ```
 ```
 ubuntu@ip-172-31-7-237:~$ ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245'
 Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1008-aws x86_64)
