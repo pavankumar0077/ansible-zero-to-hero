@@ -24,6 +24,9 @@ ubuntu@65.2.183.204 | SUCCESS => {
 - HERE WE HAVE CREATED INVENTORY.INI FILE
 - USED COMMAND LIKE -m == is a module and ping -- is the command and all means all the servers present in the INVENTORY.INI file
 
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/dac830c5-5a07-4eb9-b29b-e3173ddcdc00)
+
+## ANSIBLE ADHOC COMMAND LINK : ``` https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html ```
 
 ## GROUPING
 ```
@@ -92,6 +95,19 @@ all:
         db1.example.com:
         db2.example.com:
 ```
+
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/63b89930-7a49-4c6f-b0ff-b207d3f4e4ab)
+
+
+```
+ansible -i inventory.ini -m shell -a "sudo ls /etc/" all
+
+- Here -m is used to use modules here module is "shell" -a == is called arugment and "command" all == is all server, if can mention like db, app server like that as well
+
+ansible -i inventory.ini -m shell -a "sudo apt install nginx" all
+ansible -i inventory.ini -m shell -a "sudo apt install openjdk-17" db
+```
+
 
 ## Dynamic Inventory
 
