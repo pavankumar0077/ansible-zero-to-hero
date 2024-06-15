@@ -1,6 +1,6 @@
 # How to setup Passwordless Authentication
 
-
+NOTE :: ALL THESE COMMANDS SHOULD RUN FROM CONTROL NODE
 
 step 1 : ``` chmod 400 ansible-control.pem ```
 step 2 : ``` eval "$(ssh-agent -s)" ssh-add ansible-control.pem ```
@@ -10,10 +10,11 @@ ssh-add ansible-control.pem
 Agent pid 5688
 Identity added: ansible-control.pem (ansible-control.pem)
 ```
+```
 step 3 : ``` ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245 ```
-Here ubuntu @ <worker node - ip address ?
+Here ubuntu @ < WORKER NODE - ip address >
 ```
-```
+
 ubuntu@ip-172-31-7-237:~$ ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245
 The authenticity of host '3.108.193.245 (3.108.193.245)' can't be established.
 ED25519 key fingerprint is SHA256:pCWKPbZ24RrNvWQKTqsfvp2xLCpt/7T0CKqvzB9ecYs.
@@ -27,7 +28,9 @@ and check to make sure that only the key(s) you wanted were added.
 
 ubuntu@ip-172-31-7-237:~$
 ```
-step 4 : ``` ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245' ```
+step 4 :  ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245' 
+
+Here ubuntu @ < WORKER NODE - ip address >
 ```
 ubuntu@ip-172-31-7-237:~$ ssh -o ' IdentityFile ansible-control.pem' 'ubuntu@3.108.193.245'
 Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1008-aws x86_64)
@@ -77,10 +80,34 @@ ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 - "-o IdentityFile <PATH TO PEM FILE>": This option specifies the identity file (private key) to use for the connection. The -o flag passes this option to the underlying ssh command.
 - ubuntu@<INSTANCE-IP>: This is the username (ubuntu) and the IP address of the remote server you want to access.
 
-### Using Password 
+```
 
-- Go to the file `/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
+## PASSWORD
+### Using Password 
+### ON WORKER NODE INSTANCE GO TO 
+- Go to the file `sudo nano /etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
 - Update `PasswordAuthentication yes`
-- Restart SSH -> `sudo systemctl restart ssh`
 
 ```
+
+- If you are not using ec2 instance then go to below file and uncomment it
+ubuntu@ip-172-31-45-211:~$ sudo nano /etc/ssh/sshd_config
+#PasswordAuthentication yes
+
+```
+- Restart SSH -> `sudo systemctl restart ssh`
+- CREATE A PASSWORD
+- 
+```
+ubuntu@ip-172-31-45-211:~$ sudo passwd ubuntu
+New password:
+Retype new password:
+passwd: password updated successfully
+```
+
+- ssh-copy-id ubuntu@65.2.183.204
+- Here ip address is manage - node 2 ip address
+
+![image](https://github.com/pavankumar0077/ansible-zero-to-hero/assets/40380941/f112e9c6-3315-4a73-9643-5bc5c992db46)
+
+
