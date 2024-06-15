@@ -11,8 +11,8 @@ Agent pid 5688
 Identity added: ansible-control.pem (ansible-control.pem)
 ```
 step 3 : ``` ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245 ```
-
-``` Here ubuntu @ <worker node - ip address ?
+Here ubuntu @ <worker node - ip address ?
+```
 ```
 ubuntu@ip-172-31-7-237:~$ ssh-copy-id -f "-o IdentityFile ansible-control.pem" ubuntu@3.108.193.245
 The authenticity of host '3.108.193.245 (3.108.193.245)' can't be established.
