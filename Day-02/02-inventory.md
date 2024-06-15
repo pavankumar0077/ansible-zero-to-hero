@@ -8,6 +8,49 @@ Ansible inventory file is a fundamental component of Ansible that defines the ho
 
 - RECOMMENDED WAY IS TO USE .INI FILE IN THE INVENTORY, IF IT IS NOT THERE THEN IT WILL PEAK /etc/ansible.hosts -- file present here.
 
+```
+ubuntu@ip-172-31-7-237:~$ cat inventory.ini
+ubuntu@65.2.140.150
+ubuntu@65.2.183.204
+ubuntu@ip-172-31-7-237:~$ ansible -i inventory.ini -m ping all
+ubuntu@65.2.183.204 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+- HERE WE HAVE CREATED INVENTORY.INI FILE
+- USED COMMAND LIKE -m == is a module and ping -- is the command and all means all the servers present in the INVENTORY.INI file
+
+
+## GROUPING
+```
+ubuntu@ip-172-31-7-237:~$ cat inventory.ini
+[app]
+ubuntu@65.2.140.150
+
+[db]
+ubuntu@65.2.183.204
+```
+```
+ubuntu@ip-172-31-7-237:~$ ansible -i inventory.ini -m ping db
+ubuntu@65.2.183.204 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu@ip-172-31-7-237:~$ ansible -i inventory.ini -m ping app
+ubuntu@65.2.140.150 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 65.2.140.150 port 22: Connection timed out",
+    "unreachable": true
+}
+```
+
 ## Static Inventory
 
 A static inventory file is typically a plain text file (usually named hosts or inventory) and is structured in INI or YAML format. Here are examples of both formats:
